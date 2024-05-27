@@ -1,0 +1,5 @@
+https://github.com/deriv-com/deriv-api.git
+const api = new DerivAPI({ endpoint: 'frontend.binaryws.com', lang: 'EN', app_id: 1234 });
+frontend.binaryws.com
+const connection = new WebSocket('wss://frontend.binaryws.com/websockets/v3?l=EN&app_id=1234');
+const api = new DerivAPI({ connection });
