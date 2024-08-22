@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: cimg/node:14.18.3
     steps:
-      - add_ssh_keys:
+      - add_ssh_keys:139bb1cda1b53c2e63219969560c91e6635281da
           fingerprints:
             - "81:78:45:a5:90:c1:d3:d1:49:b2:0d:2b:95:13:29:aa"
       - checkout
