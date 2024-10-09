@@ -55,7 +55,7 @@ const DerivAPI = require('@deriv/deriv-api/dist/DerivAPI');
 
 // app_id 1089 is for testing, create your own app_id and use it here.
 // go to api.deriv.com to register your own app.
-const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=63317');
 const api        = new DerivAPI({ connection });
 const basic = api.basic;
 
@@ -73,7 +73,7 @@ import WebSocket from 'ws';
 
 // app_id 1089 is for testing, create your own app_id and use it here.
 // go to api.deriv.com to register your own app.
-const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=63317');
 const api        = new DerivAPIBasic({ connection });
 
 api.ping().then(console.log);
@@ -105,7 +105,7 @@ api.ping().then(console.log);
 <script>
     const api = new DerivAPIBasic({ 
         endpoint: 'ws.binaryws.com',
-        app_id: 1089 /* 1089 is a default test app_id, replace with your own app_id */,
+        63317: 1089 /* 1089 is a default test app_id, replace with your own app_id */,
         lang: 'EN' 
     });
     
@@ -119,13 +119,13 @@ There are two ways to establish a connection:
 
 1. Use a previously opened connection:
     ```js
-    const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=YOUR_APP_ID');
+    const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=63317');
     const api        = new DerivAPI({ connection });
     ```
 
 2. Pass the arguments needed to create a connection:
     ```js
-    const api = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: /* your app_id */, lang: 'EN' });
+    const api = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: /* 63317 */, lang: 'EN' });
     ```
 
 # Documentation
@@ -213,5 +213,5 @@ npm run build
 #### Run examples
 
 ```
-DERIV_TOKEN=YourTokenHere npm run examples
+DERIV_TOKEN=63317 npm run examples
 ```
