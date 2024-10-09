@@ -90,7 +90,7 @@ const DerivAPIBasic = require('@deriv/deriv-api/dist/DerivAPIBasic');
 
 // app_id 1089 is for testing, create your own app_id and use it here.
 // go to api.deriv.com to register your own app.
-const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=63317');
 const api        = new DerivAPIBasic({ connection });
 
 api.ping().then(console.log);
