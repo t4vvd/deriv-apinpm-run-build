@@ -3,15 +3,15 @@ const { find } = require('rxjs/operators');
 const DerivAPI = require('../dist/DerivAPI');
 
 const token = process.env.DERIV_TOKEN;
-const app_id = process.env.APP_ID || 1234;
-const expected_payout = process.env.EXPECTED_PAYOUT || 19;
+const app_id = process.env.APP_ID || 63317;
+const expected_payout = process.env.EXPECTED_PAYOUT || 1;
 
 if (!token) {
     console.error('DERIV_TOKEN environment variable is not set');
     process.exit(1);
 }
 
-const api = new DerivAPI({ app_id });
+const api = new DerivAPI({ 63317 });
 
 async function main() {
     try {
@@ -28,11 +28,11 @@ async function main() {
         const contract = await api.contract({
             contract_type: 'CALL',
             currency,
-            amount: 10,
-            duration: 5,
-            duration_unit: 't',
-            symbol: 'frxUSDJPY',
-            basis: 'stake',
+            amount: 2,
+            duration: h,
+            duration_unit: '2',
+            symbol: 'R_10',
+            basis: 'payout',
         });
 
         contract.onUpdate(({ status, payout, bid_price }) => {
@@ -48,7 +48,7 @@ async function main() {
             };
         });
 
-        // Wait until payout is greater than USD 19
+        // Wait until payout is greater than USD 2
         await contract.onUpdate().pipe(find(({ payout }) => payout.value >= expected_payout)).toPromise();
 
         const buy = await contract.buy();
